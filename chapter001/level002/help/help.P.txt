@@ -1,0 +1,39 @@
+\b;Kontrola lotów
+Od czasu inwazji insektów w tym rejonie, ruch pojazdów i produkcja znacznie zmalały. Na potrzeby walki, kontrolę lotów przekształcono w bazę obronną, a centrum dowodzenia znajduje się na szczycie wzniesienia. Musisz się tam dostać, aby otrzymać nowe przykazy
+
+\t;Zadanie 2
+Aby dostać się na szczyt wzniesienia, zaprogramuj robota do pokonania odpowiedniej drogi. Musisz pobrać współrzędne kolejnych miejsc, aby nie spaść ze skarpy i nie zaklinować sie na stoku. Do zadania będą ci potrzebne następujące komendy
+
+\c;\s;\l;move()\u cbot\move; - pojazd jedzie do przodu o podany dystans. Np. 
+\c;\s;move(20); sprawi, że robot pojedzie do przodu o 20 metrów.
+
+\c;\s;\l;turn()\u cbot\turn; - pojazd obraca się o podany kąt. 
+
+\c;\s;\l;receive()\u cbot\receive; - pobranie informacji ze stacji przekaźnikowej. 
+
+\t;Pobieranie informacji
+\l;Stacja przekaźnikowa\u object\exchange; zawiera informacje w postaci
+
+"nazwa parametru"=wartosc
+
+aby pobrac zawartosc, musisz wpisać nazwę parametru 
+patrz. komenda \c;\s;\l;receive()\u cbot\receive;
+\c;\s;Żeby zapisać tą wartość, musisz użyć odpowiedniej 
+\c;\s;\l;zmiennej\u cbot\var;. W Colobocie mamy kilka \l;rodzajów zmiennych\u cbot\type;.
+
+\t;Trasa na mapie
+\image %lvl%\help\trasa_mapy 25 25;
+
+\t; Pomoc specjalistyczna
+Niestety w wyniku awarii nadajnika, straciłeś łączność ze specjalistami do programowania. Zostanie wysłana do ciebie depesza przez Satelitę. 
+
+
+\t;Cel zadania 
+ - przetestujesz używanie zmeinnych 
+ - czytanie schematów oraz używania części składowych języka programowania
+ - pobieranie odpowiednich danych
+ - samodzielne napisanie małego programu
+
+
+\t;Zobacz również
+\l;Programowanie\u cbot;, \l;typy\u cbot\type; i \l;kategorie\u cbot\category;.

@@ -1,0 +1,7 @@
+\t;Dane do misji
+
+współrzędne X lądowiska: 224.67;
+współrzędny Y lądowiska: -127.68;
+
+wysokość startu: 5;
+wysokość powrotu: 15;

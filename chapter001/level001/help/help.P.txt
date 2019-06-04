@@ -1,0 +1,31 @@
+\b;Wprowadzenie
+Witaj użytkowniku, podjąłeś się wyzwania przetransportowania ładunku wybuchowego. Niestety statek nie mógł wylądować bezpośrednio w bazie docelowej z powodu duzego ryzyka uszkodzenia. Masz zapewnioną komunikację z kwaterą główną oraz innymi mniejszymi bazami. Musisz wykonać szereg zadań i instrukcji, aby dostać sie do bazy. 
+
+\t;Zadanie 1
+Najpierw musisz dostać się do pobliskiej bazy kontrolującej loty. twój pojazd jest wyposażone w \l;ogniwo jądrowe\u object\atomic; oraz \l;dzialo\u object\botfr;. Przejrzyj przed przystąpieniem do misji wiadomość z satelity \button 186;.
+
+\t;Sterowanie
+
+\image %lvl%\help\instrukcja 25 20;
+1) lista wyboru robotów i budynków
+2) aktualny plik z programem
+3) dodanie nowego pliku
+4) usunięcie zaznaczonego pliku
+5) robi kopie zaznaczonego pliku
+6) 7) przemieszczanie się między programami
+8) uruchomienie zaznaczonego programu
+9) edycja zaznaczonego pliku (dopisanie nowych komend)
+10) pasek stanu energii i osłony robota
+11) minimapa z możliwością przybliżania
+
+Naciśnięcie klawisza \key;\key help;\norm; pozwala ponownie przejrzeć te instrukcje na Twoim osobistym komunikatorze SatCom \button 63;.
+
+\t;Cel zadania
+ - Zapoznasz się z budową programu 
+ - dowiesz się co to jest zmienna, funkcja oraz obiekt
+ - nauczysz się czytać komunikaty o błędach w programie
+ - uzupełnianie programu o potrzebne wartości do działania
+
+
+\t;Zobacz również
+\l;Programowanie\u cbot;, \l;typy\u cbot\type; i \l;kategorie\u cbot\category;.

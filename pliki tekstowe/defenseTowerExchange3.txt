@@ -1,0 +1,55 @@
+extern void object::Konkurs()
+{
+	
+	point start = position;
+	
+	object wieze[] = radarall(Any,0,60,0,50);
+	int potrzebne = 0;
+	for (int i = 0;i < sizeof(wieze);i++)
+	{
+		if(wieze[i].category == DefenseTower || wieze[i].category == Shielder || wieze[i].category == PhazerShooter)
+		    potrzebne++;
+	}
+	dane obiekty(potrzebne); 
+	int local = 0;
+	for (int i = 0;i < sizeof(wieze);i++)
+	{
+		if (wieze[i].category == DefenseTower || wieze[i].category == Shielder || wieze[i].category == PhazerShooter)
+		{
+			obiekty.base[local] = wieze[i];
+			local++;
+		}
+		    
+	}
+	
+	while(true)
+	{
+		if(potrzebne_paliwo(obiekty) != -1)
+		{
+			int aktualny = potrzebne_paliwo(obiekty);
+			object bateria = radar(NuclearCell);
+			goto(bateria.position);
+			grab();
+			goto(obiekty.base[aktualny].position);
+			drop();
+			move(-5);
+			goto(start);
+		}
+		else
+		wait(5);
+	}
+	
+	
+}
+
+
+int potrzebne_paliwo(dane baza)
+{
+	for (int i = 0;i<sizeof(baza.base);i++)
+	{
+		if (baza.base[i].energyCell == null)
+		return i;
+	}
+	
+	return -1;
+}

@@ -1,0 +1,84 @@
+extern void object::Konkurs()
+{
+	int minimum = cmdline(0);
+	int maximum = cmdline(1);
+	
+	point pozycja_startowa = position;
+	object wieze[] = radarall(DefenseTower,0,360,minimum,maximum);
+	message(sizeof(wieze));
+	
+	while(true)
+	{
+		
+		object wieza_jeden=wieze[0];
+		object wieza_dwa=wieze[1];
+		if(wieza_jeden.energyCell == null)
+		{
+			turn(direction(wieza_jeden.position));
+			move(distance(wieza_jeden.position,position)-8);
+			object bateria = radar(NuclearCell,0,360);
+			goto(bateria.position);
+			grab();
+			goto(wieza_jeden.position);
+			drop();
+			turn(direction(pozycja_startowa));
+			move(distance2d(position,pozycja_startowa));
+			continue;
+		}
+		
+		if(wieza_dwa.energyCell == null)
+		{
+			turn(direction(wieza_dwa.position));
+			move(distance(wieza_dwa.position,position)-8);
+			object bateria = radar(NuclearCell,0,360);
+			goto(bateria.position);
+			grab();
+			goto(wieza_dwa.position);
+			drop();
+			turn(direction(pozycja_startowa));
+			move(distance2d(position,pozycja_startowa));
+			continue;
+		}
+		
+		if(wieza_jeden.energyCell != null && wieza_jeden.energyCell.energyLevel < 0.05)
+		{
+			goto(wieza_jeden.position);
+			grab();
+			turn(90);
+			drop();
+			turn(-90);
+			object bateria = radar(NuclearCell,0,360);
+			goto(bateria.position);
+			grab();
+			goto(wieza_jeden.position);
+			drop();
+			turn(direction(pozycja_startowa));
+			move(distance2d(position,pozycja_startowa));
+			continue;
+		}
+		
+		if(wieza_dwa.energyCell != null && wieza_dwa.energyCell.energyLevel < 0.05)
+		{
+			goto(wieza_jeden.position);
+			grab();
+			turn(90);
+			drop();
+			turn(-90);
+			object bateria = radar(NuclearCell,0,360);
+			goto(bateria.position);
+			grab();
+			goto(wieza_dwa.position);
+			drop();
+			turn(direction(pozycja_startowa));
+			move(distance2d(position,pozycja_startowa));
+			continue;
+		}
+		
+		else
+		wait(5);
+		
+		
+		
+	}
+	
+}

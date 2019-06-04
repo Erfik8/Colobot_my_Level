@@ -1,0 +1,34 @@
+extern void object::Konkurs()
+{
+	errmode(0);
+	point start = position;
+	int radius =15;
+	float ruch =5;
+	while(true)
+	{
+		point aktualna = position;
+		point nowa;
+		float go_X = rand();
+		float go_Y = rand();
+		if (go_X < 0.5) nowa.x = aktualna.x + ruch*rand()*-1;
+		if (go_X >= 0.5) nowa.x = aktualna.x + ruch*rand()*1;
+		if (go_Y < 0.5) nowa.y = aktualna.y + ruch*rand()*-1;
+		if (go_Y >= 0.5) nowa.y = aktualna.y + ruch*rand()*1;
+		produce(position,0,AlienAnt,"ant21.txt");
+		wait(22);
+		if (distance(position,start) > radius)
+		{
+			turn(direction(start));
+			if (move(distance2d(position,start)) != 0)
+			wait(2);
+		}
+		else 
+		{
+			turn(direction(nowa));
+			if (move(distance2d(position,nowa)) != 0)
+			wait(2);
+		}
+		
+	}
+	
+}

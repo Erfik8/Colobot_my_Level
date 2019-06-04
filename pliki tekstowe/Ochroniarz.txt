@@ -1,0 +1,71 @@
+extern void object::Konkurs()
+{
+	point koniec;
+	//koniec.x = cmdline(0);
+	//koniec.y = cmdline(1);
+	koniec.x = -176.89;
+	koniec.y = 309.18;
+	while(true)
+	{
+		object kandydaty[] = radarall(WheeledGrabber,0,360,0,20);
+		object statek_misja = null;
+		for (int i = 0;i< sizeof(kandydaty);i++)
+		{
+			if(kandydaty[i].load == null)
+			{
+				continue;
+			}
+			
+			if (kandydaty[i].load.category == TNT)
+			{
+				statek_misja = kandydaty[i];
+				break;
+			}
+		}
+		if (statek_misja == null)
+		{
+			wait(3);
+			continue;
+		}
+		shield(1,16);
+		goto(koniec);
+		shield(0,16);
+		break;
+		
+	}
+}
+public void object::transporter()
+{
+	do
+	{
+		wait(1);
+	}while(energyCell == null);
+	
+	object ochroniarz = radar(Shielder,0,360);
+	object ladunek = radar(TNT,0,360);
+	move(-5);
+	goto(ladunek.position);
+	grab();
+	goto(ochroniarz.position);
+	while(true)
+	{
+		float obrot = direction(ochroniarz.position);
+		float lewy = 0;
+		float prawy = 0;
+		if (obrot <0)
+		{
+			lewy = -1*obrot;
+		}
+		else
+		{
+			prawy = obrot;
+		}
+		
+		float dystans = distance(position,ochroniarz.position);
+		
+		motor(0.1*dystans + 0.01*lewy,0.1*dystans + 0.01*prawy);
+		wait(0.05);
+		
+	}
+	
+}

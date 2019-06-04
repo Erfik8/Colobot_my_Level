@@ -1,0 +1,21 @@
+extern void object::Konkurs()
+{
+	
+	while(true)
+	{
+		object ant = radar(AlienAnt,0,360,0,50);
+		if (ant == null)
+		{
+			wait(1);
+			continue;
+		}
+		while(ant != null)
+		{
+			if (distance(position,ant.position) <40)
+			shield(1,18);
+			wait(2);
+		}
+		shield(0,18);
+	}
+	
+}

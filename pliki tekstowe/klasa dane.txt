@@ -1,0 +1,11 @@
+public class dane
+{
+	object base[];
+	
+	void dane(int zakres)
+	{
+		object nowy[zakres];
+		
+		base=nowy;
+	}
+}

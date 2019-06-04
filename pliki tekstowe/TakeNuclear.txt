@@ -1,0 +1,10 @@
+extern void object::Konkurs()
+{
+	
+	do
+	{
+		wait(1);
+	}while(radar(WheeledShooter,0,20,0,3) == null);
+	grab();
+	drop(EnergyCell);
+}

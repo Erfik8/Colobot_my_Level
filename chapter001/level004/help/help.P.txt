@@ -1,0 +1,16 @@
+\b;Baza północna
+Znajduje się tutaj centrum uzbrojenia. W tym miejscu są też wytwarzane \l;atomowowe ogniwa elektryczne\u object\atomic;. Zajęto się ostatnimi czasu produkcją ładunków wybuchowych żeby skuteczniej walczyć z mrówkami
+
+\t;Zadanie 4
+Musisz przetransportowac do bazy północnej wcześniej zebraną przez ciebie rudę uranu, przelatując nad wielkim jeziorem. Silnik nie jest przystosowany do długich lotów, dlatego trasę podzielono na odcinki. musisz co jakiś czas wylądować statkiem na podłożu, by ochłodzić silnik, inaczej dojdzie do przegrzania i wyłączenia podczas lotu.
+
+\t;Pomoc specjalistyczna
+Nie ma żadnej łączności z bazą houston, ani z działem specjalistycznym. Jesteś zdany na siebie. Do dyspozycji masz instrukcje z poprzedniej misji. Informacje o współrzędnych otrzymasz przez satelitę 
+
+\t;Cel zadania
+ - umiejetność samodzielnego szukania rozwiązania
+ - szlifowanie wiedzy o danej funkcji
+ - używanie poznanych funkcji i metod do rozwiązania nowych problemów
+
+\t;Zobacz również
+\l;Programowanie\u cbot;, \l;typy\u cbot\type; i \l;kategorie\u cbot\category;.

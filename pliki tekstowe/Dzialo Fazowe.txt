@@ -1,0 +1,47 @@
+extern void object::Konkurs()
+{
+	aim(0,0);
+	while(true)
+	{
+		object alien = radar(AlienAnt,0,360,0,60);
+		if (alien == null)
+		{
+			wait(3);
+			continue;
+		}
+		turn(direction(alien.position));
+		if (distance(position,alien.position) > 45)
+		{
+			for(float j = 0;j<2;j++)
+			{
+				aim(22.5 + 2.5*j);
+				fire(0.01);
+				
+			}
+			continue;
+		}
+		if (distance(position,alien.position) > 30 && distance(position,alien.position) < 45)
+		{
+			for(float j = 0;j<2;j++)
+			{
+				aim(15 + 2.5*j);
+				fire(0.01);
+				
+			}
+			continue;
+		}
+		if (distance(position,alien.position)< 30)
+		{
+			for(float j = 0;j<2;j++)
+			{
+				aim(0 + 2.5*j);
+				fire(0.01);
+				
+			}
+			continue;
+		}
+		
+		
+	}
+	
+}

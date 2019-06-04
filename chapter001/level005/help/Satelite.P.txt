@@ -1,0 +1,77 @@
+\b;Specyfikacja programu
+
+\t;Schemat dzialania programu
+\token;1. Czekanie do momentu pojawienia się pierwszej \l; rudy Tytanu\u object\titanore;
+2. lot po rudę uranu
+3. przerobienie na \l; kostkę Tytanu\u object\titan; 
+4. transport kostki Tytanu do \l; Fabryki Robotow\u object\factory; 
+5. wyprodukowanie \l;transportera na kołach\u object\botgr; i przypisanie mu \l;programu \u cbot\factory; 
+6. powrot do miejsca startowego i wzięcie \l;rudy Uranu \u object\uranore; 
+7. transport do \l; elektrowni atomowej \u object\nuclear; i wytworzenie \l;ogniwa atomowego \u object\atomic; 
+8. załadowanie ogniwa atmowego na nowego robota\norm;
+
+\t;Szczegoly implementacji
+
+ - Poniżej znajdują się \l;kategorie obiektow\u cbot\category; wykorzystane do tego zadania
+	\s;- TitaniumOre - \l;Ruda tytanu \u object\titanore;
+	\s;- Titanium - \l;kostka tytanu \u object\titan;
+	\s;- Converter - \l;Huta\u object\convert;, zamienia rudę tytanu na kostkę tytanu
+	\s;- Factory - \l;Fabryka robotów \u object\factory;, tworzy nowe pojazdy
+	\s;- UraniumOre - \l;Ruda Uranu \u object\uranore;
+	\s;- NuclearPlant - \l;Ogniwo Atomowe \u object\atomic;
+	\s;- WheeledGrabber - \l;Transporter na kołach \u object\botgr;
+
+ - Na początku program czeka aż na mapie znajdzie się Ruda Tytanu. Dzieje się to tutaj
+	\s;do
+	\s;{
+	\s;	wait(1);
+	\s;}while(radar(TitaniumOre,0,360,0,40) == null);
+	
+ - gdy na mapie znajdzie się taki obiekt, program zapisuje do bazy nowy obiekt o danej kategorii. Kod zapisu wygląda tak. 
+ 
+	\s;object NAZWA_OBIEKTU = radar(KATEGORIA);
+
+ - robot leci do danej pozycji za pomocą instrukcji
+ 
+	\s;goto(NAZWA_OBIEKTU.position,WYSOKOSC_LOTU,1);
+	
+	patrz. instrukcja \l;goto() \u cbot\goto;
+	
+ - najczęściej pojazd trzeba obrócić w danym kierunku. Dzieje się to za pomocą poznaną wcześniej instrukcją turn();
+ 
+ - robot zabiera rudę uranu i leci do Huty. Proces lotu jest taki sam jak wcześniej opisany
+ - gdy robot upuści rude do Huty, musi poczekać aż przerobi tą rudę na Kostkę Tytanu. Instrukcja ta jest podobna do tej pierwszej
+ 
+	\s;do
+	\s;{
+	\s;	wait(4);
+	\s;}while(konwerter.busy() == true);
+	
+  dodatkowo robot musi sie cofnąć od Huty, żeby mogła się uruchomić i zblizyć sie, aby odebrać kostkę. patrz. instrukcja \l; busy() \u cbot\busy;, \l;move() \u cbot\move;
+	
+ - Nastepnie, gdy robot weźmię kostkę tytanu, musi ją przetransportować do fabryki. 
+ - Na miejscu transporter kładzie kostkę i uruchamia proces budowy nowego robota, do którego jest załadowany nowy program. 
+		
+	\s;NAZWA_OBIEKTU_FABRYKI.factory(WheeledGrabber,"transporter");
+	
+	patrz. instrukcja \l; factory() \u cbot\factory;
+	
+ - nastepnie robot wraca na pozycję startową i zbiera rudę Uranu. 
+ 
+ - gdy juz zbierze, leci do Elektrowni Atomowej zamienić ją na ogniwo atomowe. W tym czasie musi poczekać aż Elektrownia skończy przetwarzać
+ 
+	\s;do
+	\s;{
+	\s;	wait(5);
+	\s;}while(Atomowa.busy() == true);
+	
+ - po tym zbiera ogniwo i leci do wcześniej zapisanej pozycji 
+ 
+	\s;point nowy_robot = potition;
+	
+ - ogniwo zostaje zamontowane na robocie. Ważne jest aby robot się trochę wycofał, inaczej zbudowany robot nie będzie mógł wyjechać
+	
+\t;Informacje dodatkowe
+Program trzeba wcześniej sprawdzić, czy zawiera poprawne dane i instrukcje. Skrypt był pisany w niekomfortowej sytuacji i może zawierać blędy i niedociągnięcia	
+
+  

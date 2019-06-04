@@ -1,0 +1,18 @@
+\t;Wiadomość z bazy kontroli lotu
+\token; Baza zaatakowana, dookoła znajduje się pełno mrówek. Przed przyjazdem trzeba je unicestwić W pliku wyslanym przez Houston znajduje się przygotowany program do zaimplementowania na robota. Program trzeba uzupełnić o opdowiednie dane
+UWAGA! możliwe niekompletne dane i ich utrata. Przed uruchomieniem programu sprawdź czy nie brakuje pewnych elementów \norm;
+
+\t;Dane do uzupelnienia
+W programie będą specjalnie zaznaczone miejsca do wpisania pewnych danych. Poniżej potrzebne parametry
+
+\key; miejsce docelowe:
+	szerokosć X: -15.00
+	wysokość Y: -285.75
+	
+minimalna odleglosc od mrowki: 45
+
+Dystans biezpieczny dla robota: 70
+
+Dystans bez zagrozenia: 100 \norm;
+
+\token;

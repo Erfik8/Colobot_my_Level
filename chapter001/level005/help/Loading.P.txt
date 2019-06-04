@@ -1,0 +1,70 @@
+\t;Dane do misji: Program do misji
+
+extern void object::Przygotowanie_do_misji()
+{
+	point start = position;
+
+	do
+	{
+		wait(1);
+	}while(radar(TitaniumOre,0,360,0,40) == null);
+	
+	object ruda = radar(Titanium);
+	goto(ruda.position,1,1);
+	turn(direction(ruda.position));
+	grab();
+	
+	object konwerter = radar(Converter);
+	goto(konwerter.position,1,1);
+	turn(direction(konwerter.position));
+	
+	move(-2);
+	drop();
+	move(-3);
+	do
+	{
+		wait(4);
+	}while(konwerter.busy() == true);
+	move(1);
+	drop();
+	move(-20);
+	
+	object fabryka = radar(Factory);
+	goto(fabryka.position,5,1);
+	turn(direction(fabryka.position));
+	move(3.5);
+	drop();
+	move(-5);
+	fabryka.factory(WheeledGrabber,"transporter");
+	
+	point nowy_robot = potition;
+	
+	goto(start,4,1);
+	
+	object Uran = radar(UraniumOre);
+	turn(direction(uran.position));
+	//move(distance(Uran.position,position.position));
+	//move(1);
+	grab();
+	
+	object Atomowa = radar(NuclearPlant);
+	goto(Atomowa.position,2,1);
+	turn(distance(Atomowa.position));
+	move(1);
+	grab();
+	move(-3);
+	do
+	{
+		wait(5);
+	}when(Atomowa.busy() == true);
+	move(2);
+	grab();
+	goto(start,4,1);
+	
+	object robot = radar(Grabber,0,360,0,7);
+	turn(direction(robot.position));
+	move(2);
+	drop();
+	//move(-7);
+	
+}

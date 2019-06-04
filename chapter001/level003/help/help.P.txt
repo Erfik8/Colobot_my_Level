@@ -1,0 +1,21 @@
+\b;Kopalnia uranu
+Na cały system 4 baz, ta kopalnia jest jego sercem. Posiada bogate złoża \l;uranu\u object\uranore;, który jest potrzebny do tworzenia wydajnych \l;ogniw nuklearnych\u object\atomic;. Baza jest zaopatrzona w w dobry system obronny, chroniacy go przed inwazją mrówek
+
+\t;Zadanie 3
+W tym zadaniu musisz zmienic swój pojazd i polecieć \l;tranporterem powietrznym\u object\botgj;. W tym celu zaprogramuj robota, ktory wzniesie sie i poleci do bazy, zdobedzie \l;rude uranu\u cbot\uranore; i wroci do miejsca, gdzie wystartowal. 
+
+\t;Drobny problem
+Transporter nie posiada żadnego źródła zasilania, trzeba mu jakoś dać ogniwo, aby mógł uruchomić bardziej skomplikowane programy i przede wszystkim, by mógł się ruszać.  
+
+\t;Pomoc specjalistyczna
+W Satelicie wysłane zostaną do ciebie niektore dane potrzebne do wykonania zadania. Zostaną do tego pokazane części kodu oraz schemat programu. 
+
+\t;Cel zadania 
+ - praca ze zmiennymi
+ - poznawanie nowych funkcji i korzystanie z nich
+ - umiejętność pracy z obiektami
+ - kontrola stanu pojazdu
+
+
+\t;Zobacz również
+\l;Programowanie\u cbot;, \l;typy\u cbot\type; i \l;kategorie\u cbot\category;.

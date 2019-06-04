@@ -1,0 +1,63 @@
+extern void object::Konkurs()
+{
+	point poczatek = position;
+	while(true)
+	{
+		object baterie [] = radarall(NuclearCell);
+		object do_wymiany = null;
+		
+		for (int i = 0;i < sizeof(baterie);i++)
+		{
+			if (baterie[i].energyLevel == 0)
+			{
+				do_wymiany = baterie[i];
+				break;
+			}
+		}
+		
+		if (do_wymiany == null)
+		{
+			wait(5);
+			continue;
+		}
+		else
+		{
+			point znalezione = do_wymiany.position;
+			point wysypisko = radar(GreenFlag).position;
+			object zamiennik = null;
+			
+			goto(znalezione);
+			grab();
+			goto(space(wysypisko,3,10));
+			drop();
+			object baterie[] = radarall(NuclearCell,0,360,1,12);
+			for (int i=0;i < sizeof(baterie);i++)
+			{
+				if(baterie[i].energyLevel<10)
+				continue;
+				else
+				{
+					zamiennik = baterie[i];
+					break;
+				}
+				
+			}
+			if (zamiennik == null)
+			{
+				message("brak dostepnych ogniw jadrowych");
+			}
+			else
+			{
+				goto(zamiennik.position);
+				grab();
+				goto(znalezione);
+				drop();
+			}
+			goto(poczatek);
+			
+		}
+		
+		
+	}
+	
+}

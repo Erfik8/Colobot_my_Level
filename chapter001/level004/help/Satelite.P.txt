@@ -1,0 +1,66 @@
+\b;Kopia: Zadanie 3: 
+
+\t;Schemat dzialania programu
+\token;1. wznieś się na odpowiednią wysokość
+2. Doleć do celu
+3. Zbierz rudę uranu (jeśli nie ma, zaczekaj);
+4. wznieś się na odpowiednią wysokość 
+5. poleć do bazy\norm;
+
+\t;Szczegoly implementacji
+
+ - aby wznieść się tranposrterem, uzyj funkcji \l;jet()\u cbot\jet;. funkcja przyjmuje jeden parametr, który odpowiada za szybkosć wznoszenia się (zakres od -1 do 1); 
+ 
+ - wysokość mierzona jest względem poziomu morza. Najlepiej będzie, jeśli zapiszesz początkową wysokość statku, by później stopniowo się wznieść na odpowiednią wysokość. 
+ 
+ - poniższy przykład pokazuje fragment kodu odpowiadający za wzniesienie się pojazdu
+ 
+ float pozycja_startowa = position.z;
+	while(position.z-pozycja_startowa < 10)
+	{
+		jet(0.5);
+	}
+
+
+  position.z <-- twoja aktualna wysokość pojazdu względem morza
+  
+  while(WARUNEK) <-- pętla, specjalny fragment kodu powtarzający się do momentu, gdy warunek w nawiasie jest prawdziwy. 
+  
+  - aby dostać się do odpowiedniego miejsca, użyj funkcji turn() i move() poznane wcześniej 
+  
+  - Zanim polecisz do bazy, pamiętaj żeby zapisać aktualną pozycję startową, do której będziesz musiał wrócić
+  
+	point start = position;
+  
+  - lądowanie wygląda troszkę inaczej. Nie znasz dokładnie wysokości względem terenu, nad którym się znajdujesz. Musisz się zatem opuszczać tak długo, aż twoja wysokość nie będzie się zmieniać (różnica wyniesie 0)
+  
+  - przykład fragmentu kodu odpowiadajacego za lądowanie
+  
+  float pozycja_startowa = position.z;
+	do
+	{
+		jet(-0.8);
+		pozycja_startowa = position.z;
+		wait(0.2);
+	}
+	while(pozycja_startowa - position.z != 0);
+	
+		do...while(); <-- drugi rodzaj pętli, różni się trochę w działaniu od pętli while()
+		Szczegóły patrz. pętla \l;while()\u cbot\while; i petla \l;do...while\u cbot\do;
+		
+		wait(0.1) <-- wstrzymanie wykonywania programu przez jakis czas (podawany w sekundach). Innymi słowy, program nic nie robi przez ten czas
+		
+		\l;operator\u cbot\expr; != <-- oznacza różny od np:  0 != 1  to jest to samo co wyrażenie "0 jest różne od 1"
+		
+	- po wylądowaniu będziesz musiał zebrać rudę uranu. żebyś mógł ją odnaleźć, użyj polecenia \l;radar()\u cbot\radar;
+	 
+	object ruda = radar(UraniumOre,0,360);
+	
+	- żeby chwytać i puszczać przedmioty, użyj kolejno poleceń \l; grab()\u cbot\grab; i \l; drop()\u cbot\drop;
+	
+	- gdy już zbierzesz rudę uranu, możesz wrócić do bazy. Schemat wznoszenia pojazdu i opuszczania jest taki sam. 
+	
+\t;Dane do misji
+W raporcie wysłanym przez Houston zostaną wysłane współrzędne lotniska, na które musiz polecieć. Dodatkowo będą podane 2 wysokości, jedne będzie potrzebna do wzniesienia się przy starcie z bazy, druga do powrotu. 	
+
+  

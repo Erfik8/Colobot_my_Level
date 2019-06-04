@@ -1,0 +1,107 @@
+extern void object::Attack( )
+{
+	int		list[];
+	int		i;
+	object	p;
+	float	r = 40;
+	float	dist, direction;
+	point	start, dest, actual;
+
+	errmode(0);  // ne stoppe pas si erreur
+	while ( ismovie() != 0 )  wait(1);
+
+	i = 0;
+	list[i++] = WingedGrabber;
+	list[i++] = TrackedGrabber;
+	list[i++] = WheeledGrabber;
+	list[i++] = LeggedGrabber;
+	list[i++] = WingedShooter;
+	list[i++] = TrackedShooter;
+	list[i++] = WheeledShooter;
+	list[i++] = LeggedShooter;
+	list[i++] = WingedOrgaShooter;
+	list[i++] = TrackedOrgaShooter;
+	list[i++] = WheeledOrgaShooter;
+	list[i++] = LeggedOrgaShooter;
+	list[i++] = WingedSniffer;
+	list[i++] = TrackedSniffer;
+	list[i++] = WheeledSniffer;
+	list[i++] = LeggedSniffer;
+	list[i++] = Thumper;
+	list[i++] = PhazerShooter;
+	list[i++] = Recycler;
+	list[i++] = Shielder;
+	list[i++] = Subber;
+	list[i++] = Me;
+	list[i++] = Derrick;
+	list[i++] = BotFactory;
+	list[i++] = PowerStation;
+	list[i++] = Converter;
+	list[i++] = RepairCenter;
+	list[i++] = DefenseTower;
+	list[i++] = ResearchCenter;
+	list[i++] = RadarStation;
+	list[i++] = ExchangePost;
+	list[i++] = PowerPlant;
+	list[i++] = AutoLab;
+	list[i++] = NuclearPlant;
+
+	point polozenie;
+	polozenie.x = -24.10 - 101.13*rand();
+	polozenie.y = 303.61 + 44.72*rand();
+	
+	start = polozenie;
+	
+	while ( true )
+	{
+		p = radar(list, 0, 360, 0, 80);
+		if ( p == null )
+		{
+			dest = position;
+			direction = rand();
+			if (direction < 0.5)
+			{
+				dest.x += r*rand()*(rand()+0.2)*-1;
+			}
+			else dest.x += r*(rand()+0.2)*rand();
+			
+			direction = rand();
+			if (direction < 0.5)
+			{
+				dest.y += r*rand()*(rand()+0.2)*-1;
+			}
+			else dest.y += r*(rand()+0.2)*rand();
+			
+			turn(direction(dest));
+			move(distance(position,dest));
+			
+			if(distance(position,start) > r)
+			{
+				turn(direction(start));
+				move(distance(position,start));
+			}
+			
+		}
+		else
+		{
+			actual = position; 
+			while(distance(position,p.position)<=90)
+			{	
+				turn(direction(p.position));
+				if (distance(position,p.position)>40) move(2);
+				if (distance(position,p.position)<40)
+				{
+					fire(p.position);
+					turn(90*rand());
+					move(5*rand());
+				}
+				p = radar(list, 0, 360, 0, 80);
+				if (p == null) break;
+			}
+			turn(direction(actual));
+			move(distance(position,actual));
+			
+		}
+		wait(1*rand());
+	}
+}

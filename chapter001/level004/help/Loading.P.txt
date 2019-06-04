@@ -1,0 +1,14 @@
+\t;Dane do misji
+
+pierwsza lądowanie: 
+	współrzędne X: 67.14;
+	współrzędne Y: -27.49;
+drugie lądowanie:
+	współrzędne X: 180.86;
+	wspólrzędne Y: 184.02;
+lotnisko:
+	wspólrzędne X: 168.76;
+	wspólrzędne Y: 344.59;
+
+wysokość lotu: 15-20; 
+wyskość lotu do mety: 30;

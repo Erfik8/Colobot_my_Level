@@ -1,0 +1,51 @@
+\t; program potrzebny do mis*if
+program stworzony przez na??? expertow pozw    ci przedostać się do bazy. 
+????gram może zawierać pewne luk.?. spowodowane utr?????? ? ????smisji 
+zapoznaj się z \l;podręcznikiem porgramowania\u cbot;, aby dowie??? się więcej o danej ko?    dzie
+Program nale??? skopiowac bez     dnio do edytora w danym rob??ie 
+
+W miejsca gdzie jest wp???ne //DO UZUPELNIENIA//, usun cały na??s i wstaw odpowi    wartosc
+
+
+extern void object::Main()
+{
+	point miejsce_doc????e;
+	        miejsce_docelowe.x = //UZUPELNIC//;
+				.??_docelowe.y = //UZUPELNIC//;
+	object mrowka;
+	int MINIMALNY_DYSTANS = //UZUPELNIC//;
+	
+	while(true)
+	{
+		mrowka = radar(AlienAnt,0,360);
+		if (mrowka == null)
+		    break;
+		
+		turn(direction(mrowka.position));
+		if(di????e(position,mrowka.position)< MINIMALNY_DYSTANS)
+		{
+			aim(direction(mrowka.position),direction(,/.,/.,position));
+			fire(1);
+			continue;
+		}
+		if(distance(position,m????a.position)< //DO UZU????IENIA//)
+		{
+			move(7);
+			continue;
+		}
+		if(distan??????ition,mrowka.position)< //DO UZU????IENIA//)
+		{
+			m////20);
+			continue;
+		}
+		else 
+		{
+			move(40);
+			c.......
+		}
+	}
+	goto(miej?????elowe);
+}
+
+
+

@@ -1,0 +1,11 @@
+\b;Übung
+Programmieren Sie den Roboter so, dass er den Weg aus dem Labyrinth herausfindet, ohne die Wände zu berühren. Wir setzen voraus, dass Sie den Aufbau des Labyrinths nicht kennen. Es gibt allerdings keine Gabelungen und Sackgassen. Das Labyrinth besteht aus Quadraten, die jeweils 5m messen.
+
+\b;Nützliche Anweisungen
+\c;\l;radar\u cbot\radar;\n; um Hindernisse aufzuspüren
+\c;\l;if\u cbot\if;\n; um eine Bedingung zu testen
+\c;\l;move\u cbot\move;\n; um den Roboter zu bewegen
+\c;\l;turn\u cbot\turn;\n; um den Roboter zu drehen
+
+\t;Siehe auch
+Die \l;CBOT-Sprache\u cbot;, \l;Variablentypen\u cbot\type; und \l;Kategorien\u cbot\category;.

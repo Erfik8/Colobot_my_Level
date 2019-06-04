@@ -1,0 +1,20 @@
+\b;Kwatera główna
+Ta ogromna baza zawiera centrum dowodzenia oraz oddział specjalistyczny. Z powodu ataku robaków, doznali uszkodzenia anteny i z tego powodu mają problem z zasięgiem transmijsi. Aby częściowio rozprawić się z tym problemem, musisz dostarczyć \l; ładunek wybuchowy\u object\tnt;. 
+
+\t;Zadanie 5
+Przetransportuj ładunek z bazy północnej do kwatery głównej. Twoim głównym zadaniem będzie sprawdzenie działania programu dostarczonego przez bazę specjalistyczną. Musisz ją sprawdzić pod kątem działania, poprawnosci danych oraz wyskakujących błędów
+
+!!UWAGA: nie wykluczone że misję będziesz musiał uruchomić kilka razu. Nie musisz się martwić o wprowadzone zmiany w programie, zostaną zapisane
+
+\t;Pomoc specjalistyczna
+Dostaniesz program przesłany drogą satelitarną do skopiowania na głównego robota. Twój pojazd został już przygotowany do misji (zmiana koloru). Do tego z bazy Houston otrzymasz dokładne instrukcję jak działa program, informacje o kategoriach oraz przykłądy rozwiązania problemu
+
+\t;Cel zadania
+ - rozwiązywanie problemów zwiazanych z działaniem programu
+ - czytanie dokumentacji i poprawnianie kodu programu
+ - czytanie informacji o błędzie oraz identyfikacja usterki
+ - nauka nowych komend, danych i instrukcji
+ - analiza algorytmu i przekładanie go na program
+
+\t;Zobacz również
+\l;Programowanie\u cbot;, \l;typy\u cbot\type; i \l;kategorie\u cbot\category;.

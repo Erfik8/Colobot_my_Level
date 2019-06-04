@@ -1,0 +1,70 @@
+\t;Schemat dzialania programu
+\token; 
+1. pobranie informacji ze stacji przekaznikowych
+2. obrot + przejazd do punktu1
+3. obrot + przejazd do punktu2
+4. obrot + przejazd do punktu3
+5. obrot + przejazd do punktu4
+6. obrot + przejazd do punktu5
+7. obrot + przejazd do zielonej flagi \norm;
+
+\t;Szczegoly implementacji
+
+ - Wpisujac komende \c;\s;\l;receive()\u cbot\receive; musisz podac nazwe parametru W CUDZYSLOWY.
+     Przykladowa skladnia
+	 
+	     \s;receive("pozycja1",30);
+		 
+	Drugim parametrem jest moc nadajnika. Zawsze bedzie wynosic 30
+	
+ - Nazwy parametrów znajdują się poniżej
+		pozycja.x.1
+		pozycja.y.1
+		pozycja.x.2
+		pozycja.y.2
+		pozycja.x.3
+		pozycja.y.3
+		pozycja.x.4
+		pozycja.y.4
+		pozycja.x.5
+		pozycja.y.5
+		
+ - Dwie pary parametrów (pozycja.x.LICZBA, pozycja.y.LICZBA) muszą być zapisane do zmiennej \c;\s;\l;point\u cbot\point;. zapis wygląda następująco
+ 
+      \s;  point NAZWA_ZMIENNEJ;
+		   \s;  NAZWA_ZMIENNEJ.x = pozycja.x.LICZBA;
+			\s; NAZWA_ZMIENNEJ.y = pozycja.y.LICZBA;
+			 
+ - Aby zapisać wartość, użyj następujacej składni
+ 
+  point NAZWA_ZMIENNEJ;
+     \s; NAZWA_ZMIENNEJ.x = receive("pozycja.x.LICZBA",30);
+			 .
+			 .
+			 .
+			 
+ - Gdy pobierzesz wartości, najpierw musisz wykonać skręt w odpowiednią stronę. Służy do tego komenda \c;\s;\l;turn()\u cbot\turn; Jej parametrem jest kąt obrotu. 
+ 
+ - Aby wyliczyć kąt obrotu, musisz użyć funkcji \c;\s;\l;direction()\u cbot\direct;. Zwraca ona kąt obrotu potrzebny do skierwania sią w strone danego punktu. Jej parametrem jest wlaśnie docelowy punkt.
+ 
+ - Po obrocie pojazd musi przejechać odpowiedni dystans. Do poruszania pojazdem sluży komenda \c;\s;\l;move()\u cbot\move; Jej parametrem jest ilość metrów do przejechania
+ 
+ - Odleglość miedzy punktem a toba poznasz za pomoca funkcji \c;\s;\l;distance2d()\u cbot\dist2d;. zwraca odleglość w metrach między dwoma punktmai. Jej parametrami są punkty na mapie
+ 
+         \s;distance2d(position,punkt);
+		      position - twoja pozycja na mapie
+			  punkt - punkt docelowy
+			  
+ - Miejscem docelowym jest \l;zielona flaga \u object\flag; (kategoria \c;GreenFlag\n;). Znajduje się na pozycji X=60 i pozycji Y=-274. NIE ZAPOMNIJ O FLADZE, INACZEJ NIE UKOŃCZYSZ ZADANIA
+			  
+			  
+\t;Podgladowy fragment kodu
+\s;point punkt1;
+	\s;punkt1.x = receive("polozenie.x.1",30);
+	\s;punkt1.y = receive("polozenie.y.1",30);
+	.
+	.
+	.
+\s;turn(direction(punkt1));
+\s;move(distance2d(position,punkt1));
+

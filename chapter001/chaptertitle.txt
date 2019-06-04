@@ -1,0 +1,5 @@
+Title.E text="Fundamentals" resume="delivery of cargo"
+Title.D text="Grundlagen" resume="Lieferung der Ladung"
+Title.F text="Base" resume="livraison de fret"
+Title.P text="Konkurs ZS-1 2019" resume="Dostarczenie ładunku"
+Title.R text="Основы" resume="доставка груза"

@@ -1,0 +1,41 @@
+extern void object::Konkurs()
+{
+	object moja_wieza = radar(DefenseTower);
+	while(true)
+	{
+		if(moja_wieza.energyCell == null)
+		{
+			object ogniwo_atomowe = radar(NuclearCell);
+			goto(ogniwo_atomowe.position);
+			grab();
+			goto(moja_wieza.position);
+			drop();
+			continue;
+		}
+		
+		else if(moja_wieza.energyCell.energyLevel == 0)
+		{
+			object ogniwo_atomowe = radar(NuclearCell);
+			point wymiana_ogniwa = moja_wieza.position;
+			wymiana_ogniwa.x -=5;
+			
+			goto(moja_wieza.position);
+			grab();
+			goto(wymiana_ogniwa);
+			drop();
+			goto(ogniwo_atomowe.position);
+			grab();
+			goto(moja_wieza.position);
+			drop();
+			continue;
+		}
+		
+		else
+		{
+			wait(3);
+		}
+		
+	}
+	
+	
+}
